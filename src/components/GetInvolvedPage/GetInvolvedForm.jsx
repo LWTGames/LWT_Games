@@ -74,11 +74,16 @@ const GetInvolvedForm = () => {
             .catch(error => alert(error));
     }
 
+    /* Custom reCAPTCHA Keys
+    Copy Site Key: 6LfZSCwrAAAAAJPHxldzqEh2Dk1GkOXuRs5iTBOE
+    Copy Secret Key: 6LfZSCwrAAAAAG3_4qcbVrWpZxKkvAp_TiZV9-9d 
+    Keys will need to be used if we want to customize the reCAPTCHA in the future*/
     return (
         <form
             name="GetInvolvedForm"
             className="GetInvolvedForm form-group"
             id="GetInvolvedForm-app"
+            data-netlify-recaptcha="true"
             onSubmit={handleSubmit}
         >
             <div className="row">
@@ -258,6 +263,7 @@ const GetInvolvedForm = () => {
                 {message && <div className="alert alert-success" role="alert">
                     <p>{message}</p>
                 </div>}
+                <div data-netlify-recaptcha="true"></div>
                 <button type="submit" className="btn btn-primary GetInvolvedForm-button btn-sm">Submit</button>
             </div>
         </form>
